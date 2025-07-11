@@ -24,7 +24,7 @@ This setup is designed for my personal workflow, but it's also shared here for a
     *   Seamless navigation between panes and windows.
     *   [Add more specific Tmux features, e.g., custom keybindings, status line configurations]
 
-*   **Zsh with Oh My Zsh (or similar) for Shell Enhancements:**
+*   **Alacritty, Zsh with Oh My Zsh (or similar) for Shell Enhancements:**
     *   Powerful command-line features.
     *   Extensive plugin support for productivity (e.g., auto-suggestions, syntax highlighting).
     *   Customizable prompts.
@@ -52,9 +52,9 @@ Before you begin, ensure you have the following installed:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git ~/.dotfiles # Or wherever you prefer
+    git clone https://github.com/YOUR_USERNAME/my-ide.git ~/.dotfiles # Or wherever you prefer
     ```
-    *(Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub details)*
+    *(Replace `YOUR_USERNAME` with your actual GitHub details)*
 
 2.  **Backup your existing configurations (optional but recommended):**
     ```bash
@@ -103,7 +103,3 @@ If you have suggestions or improvements, feel free to open an issue or submit a 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-**Note:** This README is a template. Remember to fill in the bracketed placeholders `[ ]` with your specific details and add any other relevant information!
