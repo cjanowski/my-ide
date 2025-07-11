@@ -6,6 +6,7 @@ This setup is designed for my personal workflow, but it's also shared here for a
 
 ## Preview
 <img width="1512" height="982" alt="Screenshot 2025-07-11 at 7 35 10 PM" src="https://github.com/user-attachments/assets/13c8bc51-f658-4aac-85e8-be75de5ed57f" />
+
 ## Features
 
 *   **Neovim as a Full-fledged IDE:**
