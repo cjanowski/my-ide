@@ -1,105 +1,413 @@
 # My Personal IDE Setup
 
-Welcome to my personal IDE (Integrated Development Environment) setup! This repository contains my highly customized configuration for a powerful and efficient development experience, primarily centered around Neovim, Tmux, and Zsh.
+<p align="center">
+  <a href="https://neovim.io/" target="_blank">
+    <img src="https://img.shields.io/badge/Neovim-0.9.0%2B-57AD57?style=for-the-badge&logo=neovim&logoColor=white" alt="Neovim 0.9.0+">
+  </a>
+  <a href="https://github.com/tmux/tmux" target="_blank">
+    <img src="https://img.shields.io/badge/Tmux-Latest-1ABC9C?style=for-the-badge&logo=tmux&logoColor=white" alt="Tmux Latest">
+  </a>
+  <a href="https://www.zsh.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Zsh-Latest-282C34?style=for-the-badge&logo=zsh&logoColor=white" alt="Zsh Latest">
+  </a>
+  <a href="https://github.com/cjanowski/my-ide/blob/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License: MIT">
+  </a>
+</p>
 
-This setup is designed for my personal workflow, but it's also shared here for anyone who might find it useful or wants to adopt a similar environment. Feel free to explore, adapt, and use any part of this configuration.
+Welcome to my personal IDE (Integrated Development Environment) setup! This repository contains my highly customized configuration for a powerful and efficient development experience, primarily centered around **Neovim**, **Tmux**, and **Zsh**.
+
+This setup is meticulously crafted for my personal workflow, offering a seamless and productive environment. I'm sharing it here for anyone who might find it useful, wants to adopt a similar environment, or simply wants to explore a robust dotfiles configuration. Feel free to explore, adapt, and use any part of this setup!
 
 ## Preview
 <img width="1512" height="982" alt="Screenshot 2025-07-11 at 7 35 10 PM" src="https://github.com/user-attachments/assets/13c8bc51-f658-4aac-85e8-be75de5ed57f" />
 
-## Features
+---
 
-*   **Neovim as a Full-fledged IDE:**
-    *   Fast and responsive text editing.
-    *   Language Server Protocol (LSP) integration for intelligent code completion, diagnostics, and refactoring.
-    *   Integrated debugging capabilities.
-    *   Fuzzy finding with Telescope.
-    *   Git integration with Fugitive.
-    *   Extensive plugin ecosystem for various programming languages and tasks.
-    *   [Add more specific Neovim features you want to highlight, e.g., specific plugins, themes, keybindings]
+## 🚀 Quick Start
 
-*   **Tmux for Terminal Multiplexing:**
-    *   Persistent sessions: Detach from your terminal and reattach later, keeping your work intact.
-    *   Split panes and windows for efficient multitasking.
-    *   Seamless navigation between panes and windows.
-    *   [Add more specific Tmux features, e.g., custom keybindings, status line configurations]
+If you're eager to get up and running quickly, here's the TL;DR:
 
-*   **Alacritty, Zsh with Oh My Zsh (or similar) for Shell Enhancements:**
-    *   Powerful command-line features.
-    *   Extensive plugin support for productivity (e.g., auto-suggestions, syntax highlighting).
-    *   Customizable prompts.
-    *   [Add more specific Zsh features, e.g., specific plugins, aliases]
+1.  **Clone this repository:**
+    ```bash
+    git clone https://github.com/cjanowski/my-ide.git ~/.dotfiles
+    ```
+2.  **Symlink configurations:**
+    ```bash
+    ln -s ~/.dotfiles/nvim ~/.config/nvim
+    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+    ln -s ~/.dotfiles/zshrc ~/.zshrc
+    # Add any other symlinks as needed
+    ```
+3.  **Install Neovim plugins:** Open `nvim` and run `:Lazy sync`.
+4.  **Restart your terminal!**
 
-*   **Unified Configuration:**
-    *   All configurations are managed in a single repository for easy synchronization and backup.
-    *   Designed for a cohesive and productive development flow across different tools.
+*(Remember to replace `YOUR_USERNAME` with your actual GitHub username.)*
 
-## Getting Started
+---
 
-If you're interested in using this setup, here's a general guide. Please note that this is a highly personalized configuration, and you may need to adjust paths and settings to fit your system.
+## 📖 Table of Contents
+
+*   [✨ Features](#-features)
+    *   [Neovim as a Full-fledged IDE](#neovim-as-a-full-fledged-ide)
+    *   [Tmux for Terminal Multiplexing](#tmux-for-terminal-multiplexing)
+    *   [Zsh for Shell Enhancements](#zsh-for-shell-enhancements)
+    *   [Unified Configuration](#unified-configuration)
+*   [🛠️ Getting Started](#️-getting-started)
+    *   [Prerequisites](#prerequisites)
+    *   [Installation](#installation)
+*   [⚙️ Customization](#️-customization)
+*   [🤝 Contributing](#-contributing)
+*   [📄 License](#-license)
+
+---
+
+## ✨ Features
+
+This setup is built to maximize productivity and provide a delightful development experience.
+
+### Neovim as a Full-fledged IDE
+
+My Neovim configuration transforms it into a powerful, lightweight IDE with:
+
+*   ⚡ **Blazing Fast Editing:** Enjoy a highly responsive and efficient text editing experience.
+*   🧠 **Intelligent Code Completion & Diagnostics:** Powered by Language Server Protocol (LSP) for smart suggestions, error checking, and refactoring.
+*   🐞 **Integrated Debugging:** Seamlessly debug your code directly within Neovim.
+*   🔍 **Fuzzy Finding with Telescope:** Quickly navigate files, buffers, and more with powerful fuzzy search.
+*   🌳 **Git Integration with Fugitive:** Effortlessly manage Git operations from within your editor.
+*   🔌 **Extensive Plugin Ecosystem:** Support for a wide array of plugins for various programming languages and development tasks.
+*   🎨 **Beautiful Themes & Custom Keybindings:** [Add specific Neovim features you want to highlight, e.g., specific plugins like `nvim-tree`, `lualine`, `treesitter`, themes, custom keybindings, etc.]
+
+### Tmux for Terminal Multiplexing
+
+Tmux supercharges your terminal workflow:
+
+*   🔄 **Persistent Sessions:** Detach from your terminal and reattach later, keeping all your work exactly as you left it.
+*   ↔️ **Split Panes & Windows:** Efficiently manage multiple tasks side-by-side with flexible pane and window layouts.
+*   🚀 **Seamless Navigation:** Quickly switch between panes and windows with intuitive keybindings.
+*   📊 **Custom Status Line:** [Add specific Tmux features, e.g., custom keybindings, status line configurations showing CPU, memory, weather, etc.]
+
+### Zsh for Shell Enhancements
+
+My Zsh configuration provides a robust and user-friendly command-line experience:
+
+*   💪 **Powerful Command-Line Features:** Enhanced tab completion, history, and command-line editing.
+*   ➕ **Extensive Plugin Support:** Boost productivity with plugins for auto-suggestions, syntax highlighting, and more.
+*   ✨ **Customizable Prompts:** A visually informative and aesthetically pleasing command prompt.
+*   🗂️ **Handy Aliases & Functions:** [Add specific Zsh features, e.g., specific plugins like `zsh-autosuggestions`, `zsh-syntax-highlighting`, custom aliases, functions for common tasks.]
+
+### Unified Configuration
+
+*   📦 **Single Repository:** All configurations are managed in one place for easy synchronization, backup, and version control.
+*   🔗 **Cohesive Development Flow:** Designed for a consistent and productive experience across all integrated tools.
+
+---
+
+## 🛠️ Getting Started
+
+If you're interested in using this setup, here's a detailed guide. Please note that this is a highly personalized configuration, and you may need to adjust paths and settings to fit your specific system and preferences.
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
+Before you begin, ensure you have the following essential tools installed on your system:
 
-*   **Git:** For cloning this repository.
-*   **Neovim:** Version 0.9.0 or later is recommended.
-*   **Tmux:** Latest stable version.
-*   **Zsh:** Your default shell.
-*   **[Any other dependencies, e.g., Node.js for LSP servers, Python for certain tools, compilers, etc.]**
+*   **Git:** For cloning this repository and managing your dotfiles.
+*   **Neovim:** Version `0.9.0` or later is strongly recommended for full compatibility with the Lua-based configuration.
+*   **Tmux:** The latest stable version is advised for the best experience.
+*   **Zsh:** Set as your default shell.
+*   **[Any other critical dependencies, e.g., Node.js (for LSP servers like `tsserver`, `eslint_d`), Python (for `pylsp`, `black`), compilers (GCC, Clang), build tools (Make, CMake), etc. List them clearly here.]**
 
 ### Installation
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/my-ide.git ~/.dotfiles # Or wherever you prefer
-    ```
-    *(Replace `YOUR_USERNAME` with your actual GitHub details)*
+Follow these steps to set up your new IDE environment:
 
-2.  **Backup your existing configurations (optional but recommended):**
+1.  **Clone the repository:**
+    Start by cloning this repository to your home directory or a preferred location. I recommend `~/.dotfiles`.
+
     ```bash
-    mv ~/.config/nvim ~/.config/nvim_backup
-    mv ~/.tmux.conf ~/.tmux.conf_backup
-    mv ~/.zshrc ~/.zshrc_backup
-    # Add any other files you're replacing
+    git clone https://github.com/cjanowski/my-ide.git ~/.dotfiles
+    ```
+    *(**Important:** Replace `YOUR_USERNAME` with your actual GitHub username.)*
+
+2.  **Backup your existing configurations (Optional but Highly Recommended):**
+    Before symlinking, it's a good practice to back up your current configurations. This allows you to easily revert if needed.
+
+    ```bash
+    mkdir -p ~/.dotfiles_backup
+    mv ~/.config/nvim ~/.dotfiles_backup/nvim_backup_$(date +%Y%m%d%H%M%S) || true
+    mv ~/.tmux.conf ~/.dotfiles_backup/tmux.conf_backup_$(date +%Y%m%d%H%M%S) || true
+    mv ~/.zshrc ~/.dotfiles_backup/zshrc_backup_$(date +%Y%m%d%H%M%S) || true
+    # Add backup commands for any other files you're replacing (e.g., ~/.gitconfig, ~/.config/alacritty)
     ```
 
 3.  **Symlink the configuration files:**
-    This setup uses symlinks to link the files from this repository to their respective locations.
+    This setup uses symbolic links to connect the configuration files from this repository to their standard locations in your home directory.
 
     ```bash
     ln -s ~/.dotfiles/nvim ~/.config/nvim
     ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
     ln -s ~/.dotfiles/zshrc ~/.zshrc
-    # Add symlinks for any other configuration files
+    # Add symlinks for any other configuration files you have in this repo (e.g., ln -s ~/.dotfiles/.gitconfig ~/.gitconfig)
     ```
-    *(Adjust `~/.dotfiles` if you cloned the repository elsewhere)*
+    *(**Note:** Adjust `~/.dotfiles` if you cloned the repository to a different path.)*
 
 4.  **Install Neovim plugins:**
-    Open Neovim and run `:Lazy sync` (or your preferred plugin manager's command) to install all configured plugins.
+    Open Neovim for the first time. Your plugin manager (likely Lazy.nvim, as per `lazy.lua` in your `nvim/lua/configs/`) should automatically prompt you to install plugins. If not, run the command `:Lazy sync` inside Neovim.
 
 5.  **Install Zsh plugins/themes:**
-    If you're using Oh My Zsh, follow its instructions to install themes and plugins.
+    If you're using Oh My Zsh or a similar framework, follow its specific instructions to install themes and plugins. For example, Oh My Zsh typically handles this automatically when you source your `~/.zshrc`.
 
 6.  **Restart your terminal:**
-    After symlinking and installing, restart your terminal or source your `~/.zshrc` (`source ~/.zshrc`) to apply the changes.
+    After symlinking and installing, it's crucial to restart your terminal emulator or source your `~/.zshrc` (`source ~/.zshrc`) to ensure all changes take effect.
 
-## Customization
+---
 
-This setup is a starting point. You're encouraged to customize it to your liking:
+## ⚙️ Customization
+
+This setup is a robust starting point, but it's designed to be easily customizable to your personal preferences and workflow. Dive into the configuration files and make it truly your own!
 
 *   **Neovim:**
-    *   Explore `nvim/lua/` for core configurations.
-    *   Add or remove plugins in `nvim/lua/plugins/init.lua`.
-    *   Adjust keybindings in `nvim/lua/mappings.lua`.
-    *   Modify options in `nvim/lua/options.lua`.
-*   **Tmux:** Edit `tmux.conf` to change keybindings, status line, or add plugins.
-*   **Zsh:** Modify `zshrc` for aliases, functions, or additional plugins.
+    *   Explore the `nvim/lua/` directory for the core configuration files.
+    *   Add or remove plugins by editing `nvim/lua/plugins/init.lua`.
+    *   Adjust keybindings to your liking in `nvim/lua/mappings.lua`.
+    *   Modify general editor options in `nvim/lua/options.lua`.
+    *   Check `nvim/lua/autocmds.lua` for automated commands and `nvim/lua/configs/` for specific plugin configurations (e.g., `cmp.lua`, `lspconfig.lua`).
+*   **Tmux:** Edit `tmux.conf` to change keybindings, customize the status line, or add Tmux plugins.
+*   **Zsh:** Modify `zshrc` to add new aliases, functions, or integrate additional Zsh plugins.
 
-## Contributing
+---
 
-If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+## 🤝 Contributing
 
-## License
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/cjanowski/my-ide/issues).
 
-This project is licensed under the [MIT License](LICENSE).
+1.  **Fork** the repository.
+2.  **Create** your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  **Commit** your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  **Push** to the branch (`git push origin feature/AmazingFeature`).
+5.  **Open a Pull Request**.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for more details.
+
+---
+
+<p align="center">
+  # My Personal IDE Setup
+
+<p align="center">
+  <a href="https://neovim.io/" target="_blank">
+    <img src="https://img.shields.io/badge/Neovim-0.9.0%2B-57AD57?style=for-the-badge&logo=neovim&logoColor=white" alt="Neovim 0.9.0+">
+  </a>
+  <a href="https://github.com/tmux/tmux" target="_blank">
+    <img src="https://img.shields.io/badge/Tmux-Latest-1ABC9C?style=for-the-badge&logo=tmux&logoColor=white" alt="Tmux Latest">
+  </a>
+  <a href="https://www.zsh.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Zsh-Latest-282C34?style=for-the-badge&logo=zsh&logoColor=white" alt="Zsh Latest">
+  </a>
+  <a href="https://github.com/cjanowski/my-ide/blob/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License: MIT">
+  </a>
+</p>
+
+Welcome to my personal IDE (Integrated Development Environment) setup! This repository contains my highly customized configuration for a powerful and efficient development experience, primarily centered around **Neovim**, **Tmux**, and **Zsh**.
+
+This setup is meticulously crafted for my personal workflow, offering a seamless and productive environment. I'm sharing it here for anyone who might find it useful, wants to adopt a similar environment, or simply wants to explore a robust dotfiles configuration. Feel free to explore, adapt, and use any part of this setup!
+
+## Preview
+<img width="1512" height="982" alt="Screenshot 2025-07-11 at 7 35 10 PM" src="https://github.com/user-attachments/assets/13c8bc51-f658-4aac-85e8-be75de5ed57f" />
+
+---
+
+## 🚀 Quick Start
+
+If you're eager to get up and running quickly, here's the TL;DR:
+
+1.  **Clone this repository:**
+    ```bash
+    git clone https://github.com/cjanowski/my-ide.git ~/.dotfiles
+    ```
+2.  **Symlink configurations:**
+    ```bash
+    ln -s ~/.dotfiles/nvim ~/.config/nvim
+    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+    ln -s ~/.dotfiles/zshrc ~/.zshrc
+    # Add any other symlinks as needed
+    ```
+3.  **Install Neovim plugins:** Open `nvim` and run `:Lazy sync`.
+4.  **Restart your terminal!**
+
+*(Remember to replace `YOUR_USERNAME` with your actual GitHub username.)*
+
+---
+
+## 📖 Table of Contents
+
+*   [✨ Features](#-features)
+    *   [Neovim as a Full-fledged IDE](#neovim-as-a-full-fledged-ide)
+    *   [Tmux for Terminal Multiplexing](#tmux-for-terminal-multiplexing)
+    *   [Zsh for Shell Enhancements](#zsh-for-shell-enhancements)
+    *   [Unified Configuration](#unified-configuration)
+*   [🛠️ Getting Started](#️-getting-started)
+    *   [Prerequisites](#prerequisites)
+    *   [Installation](#installation)
+*   [⚙️ Customization](#️-customization)
+*   [🤝 Contributing](#-contributing)
+*   [📄 License](#-license)
+
+---
+
+## ✨ Features
+
+This setup is built to maximize productivity and provide a delightful development experience.
+
+### Neovim as a Full-fledged IDE
+
+My Neovim configuration transforms it into a powerful, lightweight IDE with:
+
+*   ⚡ **Blazing Fast Editing:** Enjoy a highly responsive and efficient text editing experience.
+*   🧠 **Intelligent Code Completion & Diagnostics:** Powered by Language Server Protocol (LSP) for smart suggestions, error checking, and refactoring (specifically for HTML and CSS).
+*   🤖 **AI Autocomplete & Formatting:** Integrated with `augmentcode/augment.vim` for AI-powered code completion, auto-formatting, and auto-saving.
+*   🐞 **Integrated Debugging:** Seamlessly debug your code directly within Neovim.
+*   🔍 **Fuzzy Finding with Telescope:** Quickly navigate files, buffers, and more with powerful fuzzy search.
+*   🌳 **Git Integration with Fugitive:** Effortlessly manage Git operations from within your editor.
+*   🔌 **Extensive Plugin Ecosystem:** Support for a wide array of plugins for various programming languages and development tasks, including:
+    *   `preservim/nerdtree`: A classic file explorer for easy navigation.
+    *   `tpope/vim-obsession`: For robust session management, allowing you to save and restore your work.
+    *   `iamcco/markdown-preview.nvim`: Live preview for your Markdown files.
+    *   `ashisha/image.vim`: View images directly within Neovim.
+    *   `stevearc/conform.nvim`: Automated code formatting to maintain consistent style.
+    *   `mhinz/vim-startify`: A customizable start screen for quick access to recent files and sessions.
+    *   `hrsh7th/nvim-cmp`: A powerful completion engine for intelligent suggestions.
+
+### Tmux for Terminal Multiplexing
+
+Tmux supercharges your terminal workflow:
+
+*   🔄 **Persistent Sessions:** Detach from your terminal and reattach later, keeping all your work exactly as you left it.
+*   ↔️ **Split Panes & Windows:** Efficiently manage multiple tasks side-by-side with flexible pane and window layouts. Custom keybindings (`|` for horizontal, `-` for vertical) make splitting intuitive.
+*   🚀 **Seamless Navigation:** Quickly switch between panes and windows with intuitive keybindings (default `Ctrl-b` prefix).
+*   📊 **Informative Status Line:** A custom status bar displays essential system information, including hostname, battery status, CPU usage, memory pressure, and current time.
+*   🔌 **Plugin Management:** Utilizes `tmux-plugins/tpm` for easy installation and management of Tmux plugins.
+
+### Zsh for Shell Enhancements
+
+My Zsh configuration provides a robust and user-friendly command-line experience:
+
+*   💪 **Powerful Command-Line Features:** Enhanced tab completion, history, and command-line editing, powered by **Oh My Zsh**.
+*   ➕ **Extensive Plugin Support:** Boost productivity with plugins like the `git` plugin for enhanced Git command-line integration.
+*   ✨ **Customizable Prompts:** A visually informative and aesthetically pleasing command prompt, using the `robbyrussell` theme.
+*   🗂️ **Handy Aliases & Functions:** Includes convenient aliases such as `python="python3"` and `pip="pip3"` for streamlined command execution.
+
+### Unified Configuration
+
+*   📦 **Single Repository:** All configurations are managed in one place for easy synchronization, backup, and version control.
+*   🔗 **Cohesive Development Flow:** Designed for a consistent and productive experience across all integrated tools.
+
+---
+
+## 🛠️ Getting Started
+
+If you're interested in using this setup, here's a detailed guide. Please note that this is a highly personalized configuration, and you may need to adjust paths and settings to fit your specific system and preferences.
+
+### Prerequisites
+
+Before you begin, ensure you have the following essential tools installed on your system:
+
+*   **Git:** For cloning this repository and managing your dotfiles.
+*   **Neovim:** Version `0.9.0` or later is strongly recommended for full compatibility with the Lua-based configuration.
+*   **Tmux:** The latest stable version is advised for the best experience.
+*   **Zsh:** Set as your default shell.
+*   **Oh My Zsh:** The framework for managing your Zsh configuration and plugins.
+*   **Node.js and npm:** Required for `markdown-preview.nvim` and potentially other LSP servers.
+*   **[Any other critical dependencies, e.g., Python (for `pylsp`, `black`), compilers (GCC, Clang), build tools (Make, CMake), etc. List them clearly here.]**
+
+### Installation
+
+Follow these steps to set up your new IDE environment:
+
+1.  **Clone the repository:**
+    Start by cloning this repository to your home directory or a preferred location. I recommend `~/.dotfiles`.
+
+    ```bash
+    git clone https://github.com/cjanowski/my-ide.git ~/.dotfiles
+    ```
+    *(**Important:** Replace `YOUR_USERNAME` with your actual GitHub username.)*
+
+2.  **Backup your existing configurations (Optional but Highly Recommended):**
+    Before symlinking, it's a good practice to back up your current configurations. This allows you to easily revert if needed.
+
+    ```bash
+    mkdir -p ~/.dotfiles_backup
+    mv ~/.config/nvim ~/.dotfiles_backup/nvim_backup_$(date +%Y%m%d%H%M%S) || true
+    mv ~/.tmux.conf ~/.dotfiles_backup/tmux.conf_backup_$(date +%Y%m%d%H%M%S) || true
+    mv ~/.zshrc ~/.dotfiles_backup/zshrc_backup_$(date +%Y%m%d%H%M%S) || true
+    # Add backup commands for any other files you're replacing (e.g., ~/.gitconfig, ~/.config/alacritty)
+    ```
+
+3.  **Symlink the configuration files:**
+    This setup uses symbolic links to connect the configuration files from this repository to their standard locations in your home directory.
+
+    ```bash
+    ln -s ~/.dotfiles/nvim ~/.config/nvim
+    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+    ln -s ~/.dotfiles/zshrc ~/.zshrc
+    # Add symlinks for any other configuration files you have in this repo (e.g., ln -s ~/.dotfiles/.gitconfig ~/.gitconfig)
+    ```
+    *(**Note:** Adjust `~/.dotfiles` if you cloned the repository to a different path.)*
+
+4.  **Install Neovim plugins:**
+    Open Neovim for the first time. Your plugin manager (likely Lazy.nvim, as per `lazy.lua` in your `nvim/lua/configs/`) should automatically prompt you to install plugins. If not, run the command `:Lazy sync` inside Neovim.
+
+5.  **Install Zsh plugins/themes:**
+    If you're using Oh My Zsh or a similar framework, follow its specific instructions to install themes and plugins. For example, Oh My Zsh typically handles this automatically when you source your `~/.zshrc`.
+
+6.  **Restart your terminal:**
+    After symlinking and installing, it's crucial to restart your terminal emulator or source your `~/.zshrc` (`source ~/.zshrc`) to ensure all changes take effect.
+
+---
+
+## ⚙️ Customization
+
+This setup is a robust starting point, but it's designed to be easily customizable to your personal preferences and workflow. Dive into the configuration files and make it truly your own!
+
+*   **Neovim:**
+    *   Explore the `nvim/lua/` directory for the core configuration files.
+    *   Add or remove plugins by editing `nvim/lua/plugins/init.lua`.
+    *   Adjust keybindings to your liking in `nvim/lua/mappings.lua`.
+    *   Modify general editor options in `nvim/lua/options.lua`.
+    *   Check `nvim/lua/autocmds.lua` for automated commands and `nvim/lua/configs/` for specific plugin configurations (e.g., `cmp.lua`, `lspconfig.lua`).
+*   **Tmux:** Edit `tmux.conf` to change keybindings, customize the status line, or add Tmux plugins.
+*   **Zsh:** Modify `zshrc` to add new aliases, functions, or integrate additional Zsh plugins.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/cjanowski/my-ide/issues).
+
+1.  **Fork** the repository.
+2.  **Create** your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  **Commit** your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  **Push** to the branch (`git push origin feature/AmazingFeature`).
+5.  **Open a Pull Request**.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for more details.
+
+---
+
+<p align="center">
+  Made with ❤️ by cjanowski
+  <br>
+  Star the repo if you find it useful! ⭐
+</p>
+  <br>
+  Star the repo if you find it useful! ⭐
+</p>
