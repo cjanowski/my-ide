@@ -42,7 +42,6 @@ If you're eager to get up and running quickly, here's the TL;DR:
 3.  **Install Neovim plugins:** Open `nvim` and run `:Lazy sync`.
 4.  **Restart your terminal!**
 
-*(Remember to replace `YOUR_USERNAME` with your actual GitHub username.)*
 
 ---
 
@@ -56,204 +55,7 @@ If you're eager to get up and running quickly, here's the TL;DR:
 *   [🛠️ Getting Started](#️-getting-started)
     *   [Prerequisites](#prerequisites)
     *   [Installation](#installation)
-*   [⚙️ Customization](#️-customization)
-*   [🤝 Contributing](#-contributing)
-*   [📄 License](#-license)
-
----
-
-## ✨ Features
-
-This setup is built to maximize productivity and provide a delightful development experience.
-
-### Neovim as a Full-fledged IDE
-
-My Neovim configuration transforms it into a powerful, lightweight IDE with:
-
-*   ⚡ **Blazing Fast Editing:** Enjoy a highly responsive and efficient text editing experience.
-*   🧠 **Intelligent Code Completion & Diagnostics:** Powered by Language Server Protocol (LSP) for smart suggestions, error checking, and refactoring.
-*   🐞 **Integrated Debugging:** Seamlessly debug your code directly within Neovim.
-*   🔍 **Fuzzy Finding with Telescope:** Quickly navigate files, buffers, and more with powerful fuzzy search.
-*   🌳 **Git Integration with Fugitive:** Effortlessly manage Git operations from within your editor.
-*   🔌 **Extensive Plugin Ecosystem:** Support for a wide array of plugins for various programming languages and development tasks.
-*   🎨 **Beautiful Themes & Custom Keybindings:** [Add specific Neovim features you want to highlight, e.g., specific plugins like `nvim-tree`, `lualine`, `treesitter`, themes, custom keybindings, etc.]
-
-### Tmux for Terminal Multiplexing
-
-Tmux supercharges your terminal workflow:
-
-*   🔄 **Persistent Sessions:** Detach from your terminal and reattach later, keeping all your work exactly as you left it.
-*   ↔️ **Split Panes & Windows:** Efficiently manage multiple tasks side-by-side with flexible pane and window layouts.
-*   🚀 **Seamless Navigation:** Quickly switch between panes and windows with intuitive keybindings.
-*   📊 **Custom Status Line:** [Add specific Tmux features, e.g., custom keybindings, status line configurations showing CPU, memory, weather, etc.]
-
-### Zsh for Shell Enhancements
-
-My Zsh configuration provides a robust and user-friendly command-line experience:
-
-*   💪 **Powerful Command-Line Features:** Enhanced tab completion, history, and command-line editing.
-*   ➕ **Extensive Plugin Support:** Boost productivity with plugins for auto-suggestions, syntax highlighting, and more.
-*   ✨ **Customizable Prompts:** A visually informative and aesthetically pleasing command prompt.
-*   🗂️ **Handy Aliases & Functions:** [Add specific Zsh features, e.g., specific plugins like `zsh-autosuggestions`, `zsh-syntax-highlighting`, custom aliases, functions for common tasks.]
-
-### Unified Configuration
-
-*   📦 **Single Repository:** All configurations are managed in one place for easy synchronization, backup, and version control.
-*   🔗 **Cohesive Development Flow:** Designed for a consistent and productive experience across all integrated tools.
-
----
-
-## 🛠️ Getting Started
-
-If you're interested in using this setup, here's a detailed guide. Please note that this is a highly personalized configuration, and you may need to adjust paths and settings to fit your specific system and preferences.
-
-### Prerequisites
-
-Before you begin, ensure you have the following essential tools installed on your system:
-
-*   **Git:** For cloning this repository and managing your dotfiles.
-*   **Neovim:** Version `0.9.0` or later is strongly recommended for full compatibility with the Lua-based configuration.
-*   **Tmux:** The latest stable version is advised for the best experience.
-*   **Zsh:** Set as your default shell.
-*   **[Any other critical dependencies, e.g., Node.js (for LSP servers like `tsserver`, `eslint_d`), Python (for `pylsp`, `black`), compilers (GCC, Clang), build tools (Make, CMake), etc. List them clearly here.]**
-
-### Installation
-
-Follow these steps to set up your new IDE environment:
-
-1.  **Clone the repository:**
-    Start by cloning this repository to your home directory or a preferred location. I recommend `~/.dotfiles`.
-
-    ```bash
-    git clone https://github.com/cjanowski/my-ide.git ~/.dotfiles
-    ```
-    *(**Important:** Replace `YOUR_USERNAME` with your actual GitHub username.)*
-
-2.  **Backup your existing configurations (Optional but Highly Recommended):**
-    Before symlinking, it's a good practice to back up your current configurations. This allows you to easily revert if needed.
-
-    ```bash
-    mkdir -p ~/.dotfiles_backup
-    mv ~/.config/nvim ~/.dotfiles_backup/nvim_backup_$(date +%Y%m%d%H%M%S) || true
-    mv ~/.tmux.conf ~/.dotfiles_backup/tmux.conf_backup_$(date +%Y%m%d%H%M%S) || true
-    mv ~/.zshrc ~/.dotfiles_backup/zshrc_backup_$(date +%Y%m%d%H%M%S) || true
-    # Add backup commands for any other files you're replacing (e.g., ~/.gitconfig, ~/.config/alacritty)
-    ```
-
-3.  **Symlink the configuration files:**
-    This setup uses symbolic links to connect the configuration files from this repository to their standard locations in your home directory.
-
-    ```bash
-    ln -s ~/.dotfiles/nvim ~/.config/nvim
-    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-    ln -s ~/.dotfiles/zshrc ~/.zshrc
-    # Add symlinks for any other configuration files you have in this repo (e.g., ln -s ~/.dotfiles/.gitconfig ~/.gitconfig)
-    ```
-    *(**Note:** Adjust `~/.dotfiles` if you cloned the repository to a different path.)*
-
-4.  **Install Neovim plugins:**
-    Open Neovim for the first time. Your plugin manager (likely Lazy.nvim, as per `lazy.lua` in your `nvim/lua/configs/`) should automatically prompt you to install plugins. If not, run the command `:Lazy sync` inside Neovim.
-
-5.  **Install Zsh plugins/themes:**
-    If you're using Oh My Zsh or a similar framework, follow its specific instructions to install themes and plugins. For example, Oh My Zsh typically handles this automatically when you source your `~/.zshrc`.
-
-6.  **Restart your terminal:**
-    After symlinking and installing, it's crucial to restart your terminal emulator or source your `~/.zshrc` (`source ~/.zshrc`) to ensure all changes take effect.
-
----
-
-## ⚙️ Customization
-
-This setup is a robust starting point, but it's designed to be easily customizable to your personal preferences and workflow. Dive into the configuration files and make it truly your own!
-
-*   **Neovim:**
-    *   Explore the `nvim/lua/` directory for the core configuration files.
-    *   Add or remove plugins by editing `nvim/lua/plugins/init.lua`.
-    *   Adjust keybindings to your liking in `nvim/lua/mappings.lua`.
-    *   Modify general editor options in `nvim/lua/options.lua`.
-    *   Check `nvim/lua/autocmds.lua` for automated commands and `nvim/lua/configs/` for specific plugin configurations (e.g., `cmp.lua`, `lspconfig.lua`).
-*   **Tmux:** Edit `tmux.conf` to change keybindings, customize the status line, or add Tmux plugins.
-*   **Zsh:** Modify `zshrc` to add new aliases, functions, or integrate additional Zsh plugins.
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/cjanowski/my-ide/issues).
-
-1.  **Fork** the repository.
-2.  **Create** your feature branch (`git checkout -b feature/AmazingFeature`).
-3.  **Commit** your changes (`git commit -m 'Add some AmazingFeature'`).
-4.  **Push** to the branch (`git push origin feature/AmazingFeature`).
-5.  **Open a Pull Request**.
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for more details.
-
----
-
-<p align="center">
-  # My Personal IDE Setup
-
-<p align="center">
-  <a href="https://neovim.io/" target="_blank">
-    <img src="https://img.shields.io/badge/Neovim-0.9.0%2B-57AD57?style=for-the-badge&logo=neovim&logoColor=white" alt="Neovim 0.9.0+">
-  </a>
-  <a href="https://github.com/tmux/tmux" target="_blank">
-    <img src="https://img.shields.io/badge/Tmux-Latest-1ABC9C?style=for-the-badge&logo=tmux&logoColor=white" alt="Tmux Latest">
-  </a>
-  <a href="https://www.zsh.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Zsh-Latest-282C34?style=for-the-badge&logo=zsh&logoColor=white" alt="Zsh Latest">
-  </a>
-  <a href="https://github.com/cjanowski/my-ide/blob/main/LICENSE" target="_blank">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License: MIT">
-  </a>
-</p>
-
-Welcome to my personal IDE (Integrated Development Environment) setup! This repository contains my highly customized configuration for a powerful and efficient development experience, primarily centered around **Neovim**, **Tmux**, and **Zsh**.
-
-This setup is meticulously crafted for my personal workflow, offering a seamless and productive environment. I'm sharing it here for anyone who might find it useful, wants to adopt a similar environment, or simply wants to explore a robust dotfiles configuration. Feel free to explore, adapt, and use any part of this setup!
-
-## Preview
-<img width="1512" height="982" alt="Screenshot 2025-07-11 at 7 35 10 PM" src="https://github.com/user-attachments/assets/13c8bc51-f658-4aac-85e8-be75de5ed57f" />
-
----
-
-## 🚀 Quick Start
-
-If you're eager to get up and running quickly, here's the TL;DR:
-
-1.  **Clone this repository:**
-    ```bash
-    git clone https://github.com/cjanowski/my-ide.git ~/.dotfiles
-    ```
-2.  **Symlink configurations:**
-    ```bash
-    ln -s ~/.dotfiles/nvim ~/.config/nvim
-    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-    ln -s ~/.dotfiles/zshrc ~/.zshrc
-    # Add any other symlinks as needed
-    ```
-3.  **Install Neovim plugins:** Open `nvim` and run `:Lazy sync`.
-4.  **Restart your terminal!**
-
-*(Remember to replace `YOUR_USERNAME` with your actual GitHub username.)*
-
----
-
-## 📖 Table of Contents
-
-*   [✨ Features](#-features)
-    *   [Neovim as a Full-fledged IDE](#neovim-as-a-full-fledged-ide)
-    *   [Tmux for Terminal Multiplexing](#tmux-for-terminal-multiplexing)
-    *   [Zsh for Shell Enhancements](#zsh-for-shell-enhancements)
-    *   [Unified Configuration](#unified-configuration)
-*   [🛠️ Getting Started](#️-getting-started)
-    *   [Prerequisites](#prerequisites)
-    *   [Installation](#installation)
+*   [⌨️ Keyboard Shortcuts/Commands and Keys](#️-keyboard-shortcutscommands-and-keys)
 *   [⚙️ Customization](#️-customization)
 *   [🤝 Contributing](#-contributing)
 *   [📄 License](#-license)
@@ -335,8 +137,6 @@ Follow these steps to set up your new IDE environment:
     ```bash
     git clone https://github.com/cjanowski/my-ide.git ~/.dotfiles
     ```
-    *(**Important:** Replace `YOUR_USERNAME` with your actual GitHub username.)*
-
 2.  **Backup your existing configurations (Optional but Highly Recommended):**
     Before symlinking, it's a good practice to back up your current configurations. This allows you to easily revert if needed.
 
@@ -367,6 +167,57 @@ Follow these steps to set up your new IDE environment:
 
 6.  **Restart your terminal:**
     After symlinking and installing, it's crucial to restart your terminal emulator or source your `~/.zshrc` (`source ~/.zshrc`) to ensure all changes take effect.
+
+---
+
+## ⌨️ Keyboard Shortcuts/Commands and Keys
+
+This section outlines some of the most frequently used keybindings and commands across Neovim, Tmux, and Zsh to help you navigate and utilize this setup efficiently.
+
+### Neovim Keybindings
+
+My Neovim configuration uses `<leader>` (which is usually `Space` by default in NvChad) for many custom mappings.
+
+| Keybinding        | Description                               |
+| :---------------- | :---------------------------------------- |
+| `;`               | Enter command mode                        |
+| `jk`              | Exit insert mode (faster than `Esc`)      |
+| `<leader>n`       | Toggle NERDTree file explorer             |
+| `<C-p>`           | Select previous item (in completion)      |
+| `<C-n>`           | Select next item (in completion)          |
+| `<C-d>`           | Scroll documentation down (in completion) |
+| `<C-f>`           | Scroll documentation up (in completion)   |
+| `<C-Space>`       | Trigger completion                        |
+| `<C-e>`           | Close completion window                   |
+| `<CR>`            | Confirm selected completion item          |
+| `<Tab>`           | Select next completion item or expand snippet |
+| `<S-Tab>`         | Select previous completion item or jump back in snippet |
+| `:MarkdownPreview`| Start live Markdown preview               |
+| `:MarkdownPreviewStop`| Stop live Markdown preview              |
+| `:Obsession`      | Save current session                      |
+| `:Obsess`         | Save current session (alias)              |
+| `:Image`          | View image file                           |
+| `:Lazy sync`      | Install/update Neovim plugins             |
+
+### Tmux Keybindings
+
+The default Tmux prefix is `Ctrl-b`. All commands below assume you press `Ctrl-b` first.
+
+| Keybinding        | Description                               |
+| :---------------- | :---------------------------------------- |
+| `Ctrl-b`          | Send prefix (if pressed twice)            |
+| `|`               | Split window horizontally                 |
+| `-`               | Split window vertically                   |
+| `mouse`           | Enable mouse mode for pane/window selection |
+
+### Zsh Aliases
+
+These are some convenient aliases defined in your `.zshrc`:
+
+| Alias             | Command                                   | Description                               |
+| :---------------- | :---------------------------------------- | :---------------------------------------- |
+| `python`          | `python3`                                 | Use `python3` as the default Python interpreter |
+| `pip`             | `pip3`                                    | Use `pip3` as the default pip command     |
 
 ---
 
@@ -403,11 +254,4 @@ This project is licensed under the [MIT License](LICENSE). See the `LICENSE` fil
 
 ---
 
-<p align="center">
-  Made with ❤️ by cjanowski
-  <br>
-  Star the repo if you find it useful! ⭐
-</p>
-  <br>
-  Star the repo if you find it useful! ⭐
-</p>
+
