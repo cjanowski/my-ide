@@ -21,12 +21,4 @@ M.base46 = {
 --      }
 --}
 
-M.plugins = {
-  options = {
-    cmp = {
-      enabled = false,
-    },
-  },
-}
-
 return M
