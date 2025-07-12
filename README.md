@@ -20,7 +20,10 @@ Welcome to my personal IDE (Integrated Development Environment) setup! This repo
 This setup is meticulously crafted for my personal workflow, offering a seamless and productive environment. I'm sharing it here for anyone who might find it useful, wants to adopt a similar environment, or simply wants to explore a robust dotfiles configuration. Feel free to explore, adapt, and use any part of this setup!
 
 ## Preview
-<img width="1512" height="982" alt="Screenshot 2025-07-11 at 7 35 10 PM" src="https://github.com/user-attachments/assets/13c8bc51-f658-4aac-85e8-be75de5ed57f" />
+
+<img width="1512" height="982" alt="Screenshot 2025-07-12 at 6 48 54 PM" src="https://github.com/user-attachments/assets/0f8976de-3ba5-478e-876d-b6e5bf545720" />
+<img width="3024" height="1964" alt="Screenshot 2025-07-12 at 6 50 16 PM" src="https://github.com/user-attachments/assets/155c73c2-15e5-46d4-ba8d-c05e58acc5c4" />
+<img width="884" height="194" alt="Screenshot 2025-07-12 at 6 51 49 PM" src="https://github.com/user-attachments/assets/3dfbd852-fa59-439e-87bd-c637722eff36" />
 
 ---
 
