@@ -206,7 +206,7 @@ The default Tmux prefix is `Ctrl-b`. All commands below assume you press `Ctrl-b
 | Keybinding        | Description                               |
 | :---------------- | :---------------------------------------- |
 | `Ctrl-b`          | Send prefix (if pressed twice)            |
-| `|`               | Split window horizontally                 |
+| `\|`              | Split window horizontally                 |
 | `-`               | Split window vertically                   |
 | `h`, `j`, `k`, `l` | Navigate between panes                    |
 | `Ctrl-o`          | Toggle between last two panes               |
