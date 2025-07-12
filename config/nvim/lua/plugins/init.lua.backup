@@ -145,9 +145,6 @@ return {
   {
     "preservim/nerdtree",
     lazy = false,
-    dependencies = {
-      "ryanoasis/vim-devicons", -- Icons for NERDTree
-    },
     config = function()
       -- NERDTree settings
       vim.g.NERDTreeShowHidden = 1
@@ -158,13 +155,6 @@ return {
       vim.g.NERDTreeShowLineNumbers = 0
       vim.g.NERDTreeMapOpenInTab = 't'
       vim.g.NERDTreeMapOpenInTabSilent = 'T'
-
-      -- Icon settings
-      vim.g.WebDevIconsUnicodeDecorateFolderNodes = 1
-      vim.g.DevIconsEnableFoldersOpenClose = 1
-      vim.g.DevIconsEnableFolderExtensionPatternMatching = 1
-      vim.g.WebDevIconsNerdTreeAfterGlyphPadding = ' '
-      vim.g.WebDevIconsNerdTreeGitPluginForceVAlign = 1
     end,
   },
 
