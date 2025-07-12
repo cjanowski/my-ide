@@ -208,6 +208,12 @@ The default Tmux prefix is `Ctrl-b`. All commands below assume you press `Ctrl-b
 | `Ctrl-b`          | Send prefix (if pressed twice)            |
 | `|`               | Split window horizontally                 |
 | `-`               | Split window vertically                   |
+| `h`, `j`, `k`, `l` | Navigate between panes                    |
+| `Ctrl-o`          | Toggle between last two panes               |
+| `Ctrl-d`          | Detach from session                       |
+| `Ctrl-a`          | Send prefix to all panes in the current window |
+| `resize-pane`     | Resize pane (use arrow keys after)        |
+| `resize-pane -R 15`     | Shiftpane right 15 units        |
 | `mouse`           | Enable mouse mode for pane/window selection |
 
 ### Zsh Aliases
