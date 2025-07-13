@@ -212,10 +212,13 @@ return {
     'augmentcode/augment.vim',
     lazy = false,
     init = function()
-      vim.g.augment_enabled = true
-      vim.g.augment_auto_format = true
-      vim.g.augment_auto_save = true
-      vim.g.augment_auto_complete = true
+      vim.g.augment_disable_completions = false
+      vim.gaugment_disable_tab_mapping = false
     end,
   },
+
+{
+  
+}
+
 }
