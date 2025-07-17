@@ -17,8 +17,7 @@
 
 Welcome to my personal IDE setup! This repository contains my highly customized configuration for a powerful development experience, centered around **Neovim**, **Tmux**, and **Zsh**.
 
-> **🧛‍♂️ Theme Note:** This setup uses the beautiful **Dracula PRO** theme suite. I'm a paid subscriber to [Dracula PRO](https://draculatheme.com/pro) which gives me access to all these premium themes and resources. If you love the aesthetic you see here, consider supporting the Dracula team by getting your own subscription!
-
+> **🧛‍♂️ Theme Note:** This setup uses the beautiful **Dracula PRO** theme suite. I'm a paid user of [Dracula PRO](https://draculatheme.com/pro), but they have great community options also!
 ## Preview
 
 <img width="1512" height="982" alt="Screenshot 2025-07-12 at 6 48 54 PM" src="https://github.com/user-attachments/assets/0f8976de-3ba5-478e-876d-b6e5bf545720" />
@@ -44,6 +43,16 @@ Welcome to my personal IDE setup! This repository contains my highly customized 
 4. **Restart your terminal!**
 
 ## ✨ Features
+
+### Terminal of choice
+- 😸 **[kitty](https://sw.kovidgoyal.net/kitty/)**
+
+### AI Tools
+- Agentic
+- [opencode](https://opencode.ai/)
+- [forgecode](https://forgecode.dev/)
+- Auto complete
+- [copilot](https://github.com/github/copilot.vim)
 
 ### Neovim Configuration
 - 🧠 **NvChad-based setup** with Dracula Pro theme
