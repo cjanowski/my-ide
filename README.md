@@ -48,15 +48,14 @@ Welcome to my personal IDE setup! This repository contains my highly customized 
 - 😸 **[kitty](https://sw.kovidgoyal.net/kitty/)**
 
 ### AI Tools
-- Agentic
+- 🤖 Agentic
 - [opencode](https://opencode.ai/)
 - [forgecode](https://forgecode.dev/)
-- Auto complete
+- 🤖 Auto complete
 - [copilot](https://github.com/github/copilot.vim)
 
 ### Neovim Configuration
 - 🧠 **NvChad-based setup** with Dracula Pro theme
-- 🤖 **AI-powered coding** with Augment.vim integration
 - 🔍 **Fuzzy finding** with Telescope
 - 🌳 **File management** with NERDTree
 - 📝 **Language support** for multiple programming languages
