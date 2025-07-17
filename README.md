@@ -42,7 +42,7 @@ Welcome to my personal IDE setup! This repository contains my highly customized 
 
 4. **Restart your terminal!**
 
-5. If you're already using a similar setup, drop and replace the `nvim` folder in your `config/nvim/`
+5. If you're already using a similar setup, skip 2-4 replace the `nvim` folder in your `config/nvim/`
 
 ## ✨ Features
 
