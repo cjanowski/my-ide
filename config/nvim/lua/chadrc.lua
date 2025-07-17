@@ -6,7 +6,8 @@
 local M = {}
 
 M.base46 = {
-	theme = "chadracula",
+	theme = "chadracula", -- Keep this for NvChad compatibility
+	transparency = true, -- Enable transparency so Dracula Pro shows through
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },

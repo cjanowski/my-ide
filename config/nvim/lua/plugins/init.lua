@@ -5,38 +5,6 @@ return {
     opts = require "configs.conform",
   },
 
-  {
-    "mfussenegger/nvim-lint",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      local lint = require("lint")
-      
-      lint.linters_by_ft = {
-        javascript = { "eslint_d" },
-        typescript = { "eslint_d" },
-        javascriptreact = { "eslint_d" },
-        typescriptreact = { "eslint_d" },
-        python = { "ruff" },
-        go = { "golangcilint" },
-        php = { "phpstan" },
-        sh = { "shellcheck" },
-        bash = { "shellcheck" },
-      }
-
-      local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
-      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave", "TextChanged", "TextChangedI" }, {
-        group = lint_augroup,
-        callback = function()
-          lint.try_lint()
-        end,
-      })
-
-      vim.keymap.set("n", "<leader>l", function()
-        lint.try_lint()
-      end, { desc = "Trigger linting for current file" })
-    end,
-  },
 
   {
     "williamboman/mason.nvim",
@@ -71,6 +39,29 @@ return {
   },
 
   {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "html",
+          "cssls",
+          "ts_ls",
+          "pyright",
+          "rust_analyzer",
+          "gopls",
+          "intelephense",
+          "jsonls",
+          "yamlls",
+          "dockerls",
+          "bashls",
+        },
+      })
+    end,
+  },
+
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "williamboman/mason.nvim",
@@ -79,28 +70,6 @@ return {
     config = function()
       require "configs.lspconfig"
     end,
-  },
-
-  {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = { "williamboman/mason.nvim" },
-    opts = {
-      ensure_installed = {
-        "lua_ls",
-        "html",
-        "cssls",
-        "ts_ls",
-        "eslint",
-        "pyright",
-        "rust_analyzer",
-        "gopls",
-        "intelephense",
-        "jsonls",
-        "yamlls",
-        "dockerls",
-        "bashls",
-      },
-    },
   },
 
   {
@@ -188,37 +157,30 @@ return {
     cmd = { "Image" },
   },
 
+  --{ 'augmentcode/augment.vim',
+  --  cmd = { "Augment" },
+  --  config = function()
+  --    vim.g.augment_no_tab_map = false
+  --    vim.g.augment_filetypes = {
+  --      ["*"] = true
+  --    }
+  --  end,
+  --},
+
   {
-    "github/copilot.vim",
-    event = "VeryLazy",
+    'github/copilot.vim',
+    event = 'VeryLazy',
+
+    -- Copilot configuration
     config = function()
+      -- Disable default tab mapping for Copilot
       vim.g.copilot_no_tab_map = false
+
+      -- Enable Copilot for all filetypes
       vim.g.copilot_filetypes = {
-        ["*"] = false,
-        ["javascript"] = true,
-        ["typescript"] = true,
-        ["lua"] = true,
-        ["rust"] = true,
-        ["c"] = true,
-        ["c#"] = true,
-        ["c++"] = true,
-        ["go"] = true,
-        ["python"] = true,
+        ['*'] = true
       }
     end,
-  },
-
-  {
-    'augmentcode/augment.vim',
-    lazy = false,
-    init = function()
-      vim.g.augment_disable_completions = false
-      vim.gaugment_disable_tab_mapping = false
-    end,
-  },
-
-{
-  
-}
+  }
 
 }

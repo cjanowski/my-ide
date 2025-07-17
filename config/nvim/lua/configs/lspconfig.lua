@@ -1,31 +1,5 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { 
-  "html", 
-  "cssls", 
-  "ts_ls", 
-  "eslint", 
-  "pyright", 
-  "rust_analyzer", 
-  "gopls", 
-  "intelephense", 
-  "jsonls", 
-  "yamlls", 
-  "dockerls", 
-  "bashls",
-  "lua_ls" 
-}
-
--- Enable all language servers
-for _, lsp in ipairs(servers) do
-  vim.lsp.config[lsp] = {
-    cmd = { lsp },
-    filetypes = vim.lsp.config[lsp] and vim.lsp.config[lsp].filetypes or nil,
-    root_markers = vim.lsp.config[lsp] and vim.lsp.config[lsp].root_markers or nil,
-  }
-end
-
-vim.lsp.enable(servers)
 
 -- Diagnostic configuration
 vim.diagnostic.config({
