@@ -88,54 +88,7 @@ return {
   },
 
   -- Your plugins
-  {
-    "goolord/alpha-nvim",
-    lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      local alpha = require("alpha")
-      local dashboard = require("alpha.themes.dashboard")
-      
-      dashboard.section.buttons.val = {
-        dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-        dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
-        dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
-        dashboard.button("c", "  Config", ":e ~/.config/nvim/init.lua<CR>"),
-        dashboard.button("q", "  Quit", ":qa<CR>"),
-      }
-      
-      alpha.setup(dashboard.config)
-    end,
-  },
 
-  -- Disable nvim-tree in favor of NERDTree
-  { "nvim-tree/nvim-tree.lua", enabled = false },
-
-  {
-    "preservim/nerdtree",
-    lazy = false,
-    dependencies = {
-      "ryanoasis/vim-devicons", -- Icons for NERDTree
-    },
-    config = function()
-      -- NERDTree settings
-      vim.g.NERDTreeShowHidden = 1
-      vim.g.NERDTreeQuitOnOpen = 1
-      vim.g.NERDTreeAutoDeleteBuffer = 1
-      vim.g.NERDTreeMinimalUI = 1
-      vim.g.NERDTreeDirArrows = 1
-      vim.g.NERDTreeShowLineNumbers = 0
-      vim.g.NERDTreeMapOpenInTab = 't'
-      vim.g.NERDTreeMapOpenInTabSilent = 'T'
-
-      -- Icon settings
-      vim.g.WebDevIconsUnicodeDecorateFolderNodes = 1
-      vim.g.DevIconsEnableFoldersOpenClose = 1
-      vim.g.DevIconsEnableFolderExtensionPatternMatching = 1
-      vim.g.WebDevIconsNerdTreeAfterGlyphPadding = ' '
-      vim.g.WebDevIconsNerdTreeGitPluginForceVAlign = 1
-    end,
-  },
 
   {
     "tpope/vim-obsession",
@@ -157,29 +110,27 @@ return {
     cmd = { "Image" },
   },
 
-  --{ 'augmentcode/augment.vim',
-  --  cmd = { "Augment" },
-  --  config = function()
-  --    vim.g.augment_no_tab_map = false
-  --    vim.g.augment_filetypes = {
-  --      ["*"] = true
-  --    }
-  --  end,
-  --},
+
 
   {
     'github/copilot.vim',
-    event = 'VeryLazy',
+    event = 'InsertEnter',
 
     -- Copilot configuration
     config = function()
-      -- Disable default tab mapping for Copilot
-      vim.g.copilot_no_tab_map = false
+      -- Disable default tab mapping for Copilot (allow manual trigger)
+      vim.g.copilot_no_tab_map = true
 
       -- Enable Copilot for all filetypes
       vim.g.copilot_filetypes = {
         ['*'] = true
       }
+      
+      -- Manual trigger with Ctrl+G
+      vim.keymap.set('i', '<C-g>', 'copilot#Accept("\\<CR>")', {
+        expr = true,
+        replace_keycodes = false
+      })
     end,
   }
 

@@ -32,11 +32,7 @@ dofile(vim.g.base46_cache .. "statusline")
 require "options"
 require "autocmds"
 
--- Load Dracula Pro theme (overrides NvChad theme)
--- Using defer_fn to ensure it loads after everything else
-vim.defer_fn(function()
-  require("configs.dracula_pro").setup()
-end, 100)
+
 
 vim.schedule(function()
   require "mappings"
