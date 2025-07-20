@@ -17,9 +17,6 @@
 
 Welcome to my personal IDE setup! This repository contains my highly customized configuration for a powerful development experience, centered around **Neovim**, **Tmux**, and **Zsh**.
 
-> **🧛‍♂️ Theme Note:** This setup uses the beautiful **Dracula PRO** theme suite. I'm a paid user of [Dracula PRO](https://draculatheme.com/pro), but they have great community options also!
-## Preview
-
 <img width="1512" height="982" alt="Screenshot 2025-07-12 at 6 48 54 PM" src="https://github.com/user-attachments/assets/0f8976de-3ba5-478e-876d-b6e5bf545720" />
 <img width="3024" height="1964" alt="Screenshot 2025-07-12 at 6 50 16 PM" src="https://github.com/user-attachments/assets/155c73c2-15e5-46d4-ba8d-c05e58acc5c4" />
 <img width="884" height="194" alt="Screenshot 2025-07-12 at 6 51 49 PM" src="https://github.com/user-attachments/assets/3dfbd852-fa59-439e-87bd-c637722eff36" />
@@ -31,7 +28,7 @@ Welcome to my personal IDE setup! This repository contains my highly customized 
    git clone https://github.com/coryjanowski/my-ide.git ~/my-ide
    ```
 
-2. **Symlink configurations:**
+2. **Symlink configurations or skip and copy over nvim folder in your `config/nvim/`:**
    ```bash
    ln -s ~/my-ide/config/nvim ~/.config/nvim
    ln -s ~/my-ide/config/tmux.conf ~/.tmux.conf
@@ -41,37 +38,6 @@ Welcome to my personal IDE setup! This repository contains my highly customized 
 3. **Install Neovim plugins:** Open `nvim` and run `:Lazy sync`
 
 4. **Restart your terminal!**
-
-5. If you're already using a similar setup, skip 2-4 replace the `nvim` folder in your `config/nvim/`
-
-## ✨ Features
-
-### Terminal of choice
-- 😸 **[kitty](https://sw.kovidgoyal.net/kitty/)**
-
-### AI Tools
-- 🤖 Agentic
-- [opencode](https://opencode.ai/)
-- [forgecode](https://forgecode.dev/)
-- 🤖 Auto complete
-- [copilot](https://github.com/github/copilot.vim)
-
-### Neovim Configuration
-- 🧠 **NvChad-based setup** with Dracula Pro theme
-- 🔍 **Fuzzy finding** with Telescope
-- 🌳 **File management** with NERDTree
-- 📝 **Language support** for multiple programming languages
-- 🎨 **Beautiful icons** with vim-devicons
-
-### Tmux Configuration  
-- 🔄 **Session management** for persistent workflows
-- ↔️ **Split panes** with intuitive keybindings
-- 📊 **Custom status bar** with system information
-
-### Zsh Configuration
-- ⚡ **Enhanced shell** with Oh My Zsh
-- �� **Custom aliases** and functions
-- 🎯 **Productivity shortcuts**
 
 ## 📁 Repository Structure
 
