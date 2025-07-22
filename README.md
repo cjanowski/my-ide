@@ -80,6 +80,7 @@ Contributions welcome! Feel free to open issues or submit pull requests.
 - [Dracula Pro](https://draculatheme.com/pro)
 - [kitty](https://sw.kovidgoyal.net/kitty/)
 - [mason](https://github.com/mason-org/mason.nvim)
+- [NvChad](https://github.com/NvChad)
 
 ## 📄 License
 
