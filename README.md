@@ -15,13 +15,17 @@
   </a>
 </p>
 
-Welcome to my personal IDE setup! This repository contains my highly customized configuration for a powerful development experience, centered around **Neovim**, **Tmux**, and **Zsh**.
+## Images
+<img width="1512" height="982" alt="Screenshot 2025-07-21 at 8 49 57 PM" src="https://github.com/user-attachments/assets/5442b023-989d-459d-b5f5-662450a89833" />
+<img width="1512" height="982" alt="Screenshot 2025-07-21 at 8 52 51 PM" src="https://github.com/user-attachments/assets/4a9e5810-e4c9-4e23-8606-68f4d978e273" />
+<img width="1512" height="982" alt="Screenshot 2025-07-21 at 8 55 39 PM" src="https://github.com/user-attachments/assets/a29447e6-d6e8-4865-a442-65c5e2a54c20" />
 
-<img width="1512" height="982" alt="Screenshot 2025-07-12 at 6 48 54 PM" src="https://github.com/user-attachments/assets/0f8976de-3ba5-478e-876d-b6e5bf545720" />
-<img width="3024" height="1964" alt="Screenshot 2025-07-12 at 6 50 16 PM" src="https://github.com/user-attachments/assets/155c73c2-15e5-46d4-ba8d-c05e58acc5c4" />
-<img width="884" height="194" alt="Screenshot 2025-07-12 at 6 51 49 PM" src="https://github.com/user-attachments/assets/3dfbd852-fa59-439e-87bd-c637722eff36" />
 
-## 🚀 Quick Start
+
+## 🚀 Super Quick Start
+- If you already have your terminal setup, replace your ~/.config/nvim folder with this one. Be sure to rename your old nvim not delete for easy rollback.
+
+### Quick Start
 
 1. **Clone this repository:**
    ```bash
@@ -70,6 +74,12 @@ Feel free to modify any configurations in the `config/` directory to suit your p
 ## 🤝 Contributing
 
 Contributions welcome! Feel free to open issues or submit pull requests.
+
+## SOUTOUTS!
+- [telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [Dracula Pro](https://draculatheme.com/pro)
+- [kitty](https://sw.kovidgoyal.net/kitty/)
+- [mason](https://github.com/mason-org/mason.nvim)
 
 ## 📄 License
 
