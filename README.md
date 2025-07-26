@@ -78,7 +78,7 @@ Contributions welcome! Feel free to open issues or submit pull requests.
 ## SHOUTOUTS!
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Dracula Pro](https://draculatheme.com/pro)
-- [kitty](https://sw.kovidgoyal.net/kitty/)
+- [Alacritty](https://alacritty.org/)
 - [mason](https://github.com/mason-org/mason.nvim)
 - [NvChad](https://github.com/NvChad)
 
